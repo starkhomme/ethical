@@ -2,10 +2,13 @@
 
 import socket
 
-HOST='localhost'
-PORT=7776
+HOST=input('enter host name \n')
+PORT=int(input('enter port \n'))
 
-s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-s.connect((HOST,PORT))
+s=socket.socket()
+try:
+    s.connect((HOST,PORT))
+    print('connected '+HOST)
 
-
+except:
+    print('could not make connection')
